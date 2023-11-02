@@ -15,7 +15,7 @@ Sulla Colonna di Destra
 In entrambe le colonne:
 - Barra di scorrimento sia sulla chat che sulla lista utenti -->
 
-# MILESTONES
+# Boolzapp
 
 ## MILESTONE 1
 Creare struttura HTML/CSS WebApp:
