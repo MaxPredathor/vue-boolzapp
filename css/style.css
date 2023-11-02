@@ -9,6 +9,7 @@
     --color-sent-message: #d5f9ba;
     --color-notification: #8edafc;
     --color-search: #fafafa;
+    --color-inputtext: #f3eeea;
     --my-bg-color: linear-gradient(to bottom,
             #009688 0%,
             #009688 20%,
@@ -33,7 +34,7 @@ body {
 
 .header {
     background-color: var(--color-headers);
-    height: 70px;
+    height: 80px;
 }
 
 .notifica {
@@ -42,6 +43,7 @@ body {
 
 .h--70 {
     height: 70px;
+    background-color: var(--color-inputtext);
 }
 
 .my-circle {
@@ -132,8 +134,22 @@ body {
 
 .sent {
     background-color: var(--color-sent-message);
+    border-radius: 1.5em;
+    padding: 20px 10px;
 }
 
 .received {
     background-color: var(--color-white);
+    border-radius: 1.5em;
+    padding: 20px 10px;
 }
+
+.orario {
+    font-size: 0.6em;
+    color: var(--color-text-grey);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.message {}
