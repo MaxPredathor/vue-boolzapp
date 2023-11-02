@@ -153,11 +153,6 @@ body {
     right: 5px;
 }
 
-.contatto:hover .whitehover p {
-    color: var(--color-white);
-}
-
 .contatto:hover {
-    background-color: var(--color-text-grey);
-    color: var(--color-white);
+    background-color: var(--color-contact-hover);
 }
