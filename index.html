@@ -109,12 +109,12 @@
                         </div>
                         <div class="col-12 d-flex justify-content-evenly align-items-center h--70">
                             <i class="fa-regular fa-face-smile icons"></i>
-                            <input class="w-75 border-0 rounded-2" type="text" placeholder="Scrivi un Messaggio"
-                                v-model="newMessage" @keyup.enter="addMessage">
+                            <input class="w-75 border-0 rounded-2 my-input" type="text"
+                                placeholder="Scrivi un Messaggio" v-model="newMessage" @keyup.enter="addMessage">
                             <div v-if="newMessage === ''">
                                 <i class="fa-solid fa-microphone icons"></i>
                             </div>
-                            <button @click="addMessage" v-else>
+                            <button class="paperplane-button" @click="addMessage" v-else>
                                 <i class="fa-solid fa-paper-plane icons"></i>
                             </button>
 
