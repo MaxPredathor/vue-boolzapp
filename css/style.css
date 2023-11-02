@@ -136,8 +136,10 @@ body {
     background-color: var(--color-sent-message);
     border-radius: 1.5em;
     padding: 20px 10px;
-    text-align: left;
+    position: relative;
+    left: 75%;
 }
+
 
 .received {
     background-color: var(--color-white);
@@ -154,5 +156,9 @@ body {
 }
 
 .contatto:hover {
+    background-color: var(--color-contact-hover);
+}
+
+.active {
     background-color: var(--color-contact-hover);
 }

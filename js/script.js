@@ -5,13 +5,13 @@ createApp({
   data() {
     return {
       contacts: contactsList,
-      activeContact: 1,
+      activeId: 1,
     };
   },
-  methods: {
-    removeContact(id) {
-      const index = this.contacts.findIndex((contact) => task.id === id);
-      this.contacts.splice(index, 1);
+  methods: {},
+  computed: {
+    activeContact() {
+      return this.contacts.findIndex((contact) => contact.id === this.activeId);
     },
   },
 }).mount("#app");
