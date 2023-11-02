@@ -1,0 +1,16 @@
+:root {
+    --color-white: #ffffff;
+    --color-dark-text: #161012;
+    --color-dark-grey: #6b7376;
+    --color-text-grey: #b6bbc1;
+    --color-headers: #eaeaea;
+    --color-contact-hover: #e9ebeb;
+    --color-light-icons: #b1b1b1;
+    --color-sent-message: #d5f9ba;
+    --color-notification: #8edafc;
+    --my-bg-color: linear-gradient(to bottom,
+            #009688 0%,
+            #009688 20%,
+            #DBDBD3 20%,
+            #DBDBD3 100%);
+}
