@@ -18,9 +18,11 @@ createApp({
       });
       this.newMessage = "";
       setTimeout(() => {
+        this.updateScroll();
+      }, 10);
+      setTimeout(() => {
         this.addAnswer();
-        updateScroll();
-      }, 1000);
+      }, 10);
     },
     addAnswer() {
       this.contacts[this.activeContact].messages.push({
@@ -28,6 +30,13 @@ createApp({
         message: "Ok",
         status: "received",
       });
+      setTimeout(() => {
+        this.updateScroll();
+      }, 1000);
+    },
+    updateScroll() {
+      let element = document.getElementById("myDiv");
+      element.scroll({ top: element.scrollHeight, behavior: "smooth" });
     },
   },
   computed: {
@@ -36,11 +45,6 @@ createApp({
     },
   },
 }).mount("#app");
-
-function updateScroll() {
-  let element = document.getElementById("myDiv");
-  element.scrollBy(0, 2000);
-}
 
 // function bottom() {
 //   document.getElementById("test").scrollIntoView();

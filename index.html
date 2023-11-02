@@ -99,14 +99,13 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <div id="myDiv" class="col-12 flex-grow-1 main-text overflow-y-auto h0">
+                        <div id="myDiv" class="col-12 flex-grow-1 main-text overflow-y-auto h0" @update="updateScroll">
                             <div class="my-5" v-for="(message, index) in contacts[activeContact].messages">
                                 <div class="my-2 d-inline-block w-25 position-relative" :class="message.status">
                                     {{contacts[activeContact].messages[index].message}}
                                     <span class="orario">{{message.date}}</span>
                                 </div>
                             </div>
-                            <div id="test"></div>
                         </div>
                         <div class="col-12 d-flex justify-content-evenly align-items-center h--70">
                             <i class="fa-regular fa-face-smile icons"></i>
