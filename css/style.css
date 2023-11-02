@@ -33,10 +33,15 @@ body {
 
 .header {
     background-color: var(--color-headers);
+    height: 70px;
 }
 
 .notifica {
     background-color: var(--color-notification);
+}
+
+.h--70 {
+    height: 70px;
 }
 
 .my-circle {
@@ -71,7 +76,7 @@ body {
 
 .icons {
     color: var(--color-light-icons);
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .searchbar {
@@ -84,8 +89,7 @@ body {
 
 .main-text {
     background-image: url(/img/mine.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: fill;
     background-position: center;
 }
 
@@ -126,6 +130,10 @@ body {
     right: 10px;
 }
 
-.sent {}
+.sent {
+    background-color: var(--color-sent-message);
+}
 
-.received {}
+.received {
+    background-color: var(--color-white);
+}
