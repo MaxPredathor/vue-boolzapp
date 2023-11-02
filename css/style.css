@@ -8,6 +8,7 @@
     --color-light-icons: #b1b1b1;
     --color-sent-message: #d5f9ba;
     --color-notification: #8edafc;
+    --color-search: #fafafa;
     --my-bg-color: linear-gradient(to bottom,
             #009688 0%,
             #009688 20%,
@@ -34,8 +35,95 @@ body {
     background-color: var(--color-headers);
 }
 
+.notifica {
+    background-color: var(--color-notification);
+}
+
+.my-circle {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.my-circle>img {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.my-bell {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background-color: var(--color-white);
+    color: var(--color-notification);
+    margin: 20px 10px;
+}
+
+.my-bell>i {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.icons {
+    color: var(--color-light-icons);
+    font-size: 1.5em;
+}
+
+.searchbar {
+    background-color: var(--color-search);
+}
+
+.lense {
+    color: var(--color-light-icons);
+}
+
+.main-text {
+    background-image: url(/img/mine.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.my-name {
+    margin-right: 200px;
+    font-size: 1.5em;
+}
+
 .h0 {
     height: 0;
+}
+
+.contact-img {
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+}
+
+.border-top {
+    border-top: 1px solid var(--color-dark-grey);
+}
+
+.reset-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.last-message {
+    font-size: 0.8em;
+    color: var(--color-text-grey);
+}
+
+.ora-messaggio {
+    font-size: 0.6em;
+    color: var(--color-text-grey);
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .sent {}
