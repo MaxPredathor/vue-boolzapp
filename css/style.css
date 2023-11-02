@@ -152,7 +152,7 @@ body {
     color: var(--color-text-grey);
     position: absolute;
     bottom: 5px;
-    right: 5px;
+    right: 10px;
 }
 
 .contatto:hover {
