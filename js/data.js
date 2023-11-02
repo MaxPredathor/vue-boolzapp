@@ -2,7 +2,7 @@ export const contactsList = [
   {
     id: 1,
     name: "Michele",
-    avatar: "./img/avatar_1.jpg",
+    avatar: "img/avatar_1.jpg",
     visible: true,
     messages: [
       {

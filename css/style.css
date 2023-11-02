@@ -136,6 +136,7 @@ body {
     background-color: var(--color-sent-message);
     border-radius: 1.5em;
     padding: 20px 10px;
+    text-align: left;
 }
 
 .received {
