@@ -19,6 +19,7 @@ createApp({
       this.newMessage = "";
       setTimeout(() => {
         this.addAnswer();
+        updateScroll();
       }, 1000);
     },
     addAnswer() {
@@ -35,3 +36,12 @@ createApp({
     },
   },
 }).mount("#app");
+
+function updateScroll() {
+  let element = document.getElementById("myDiv");
+  element.scrollBy(0, 2000);
+}
+
+// function bottom() {
+//   document.getElementById("test").scrollIntoView();
+// }

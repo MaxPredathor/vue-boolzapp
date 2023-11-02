@@ -162,3 +162,7 @@ body {
 .active {
     background-color: var(--color-contact-hover);
 }
+
+#test {
+    height: 2px;
+}
