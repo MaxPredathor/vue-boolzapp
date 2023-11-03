@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
                             <div class="contatto d-flex position-relative border-top"
-                                v-for="contact in filteredContact()" @click="activeId = contact.id"
+                                v-for="contact in filteredContact()" @click="activeId = contact.id, dropdownRemove() "
                                 :class="{'active': isActive(contact.id - 1)}">
                                 <div class="rounded-circle overflow-hidden my-2 mx-2">
                                     <img class="contact-img" :src="contact.avatar" alt="">
@@ -101,16 +101,17 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <div id="myDiv" class="col-12 flex-grow-1 main-text overflow-y-auto h0" @update="updateScroll">
+                        <div id="myDiv" class="col-12 flex-grow-1 main-text overflow-y-auto h0" @update="updateScroll"
+                            @click="dropdownRemove()">
                             <div class="my-5" v-for="(message, index) in contacts[activeContact].messages">
                                 <div class="my-2 d-inline-block w-25 position-relative boss" :class="message.status">
                                     {{contacts[activeContact].messages[index].message}}
                                     <span class="orario">{{myHour(message.date)}}</span>
                                     <span v-if="{'sent': true}" class="right-triangle"></span>
-                                    <span class="chevron" @click="clicked = index">
+                                    <span class="chevron" @click.stop="clicked = index">
                                         <i class="fa-solid fa-chevron-down"></i>
                                     </span>
-                                    <div class="dropdown" v-show="clicked">
+                                    <div class="dropdown" v-show="index === clicked">
                                         <div class="info">
                                             Info Messaggio
                                         </div>

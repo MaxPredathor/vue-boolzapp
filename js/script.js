@@ -53,6 +53,9 @@ createApp({
         contact.name.toLowerCase().includes(this.filterContact.toLowerCase())
       );
     },
+    dropdownRemove() {
+      this.clicked = null;
+    },
   },
   computed: {
     activeContact() {
