@@ -200,7 +200,7 @@ body {
     position: absolute;
     top: -50px;
     right: 10px;
-    background-color: var(--color-contact-hover);
+    background-color: var(--color-inputtext);
 }
 
 .info {

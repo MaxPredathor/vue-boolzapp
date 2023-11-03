@@ -68,10 +68,9 @@
                                 </div>
                                 <div class="d-flex flex-column justify-content-center whitehover">
                                     <h5>{{contact.name}}</h5>
-                                    <p class="last-message">{{contact.messages[contact.messages.length - 1].message}}
+                                    <p class="last-message">{{getLastMessage(contact.id)}}
                                     </p>
-                                    <p class="ora-messaggio">{{contact.messages[contact.messages.length -
-                                        1].date}}</p>
+                                    <p class="ora-messaggio">{{getLastAccess(contact.id)}}</p>
                                 </div>
 
                             </div>
@@ -89,9 +88,7 @@
                                     <h5>{{contacts[activeContact].name}}</h5>
                                     <p class="last-message pb-3">
                                         Ultimo accesso:
-                                        {{contacts[activeContact].messages[contacts[activeContact].messages.length
-                                        -
-                                        1].date}}
+                                        {{lastDate}}
                                     </p>
                                 </div>
                             </div>
@@ -108,14 +105,14 @@
                                     {{contacts[activeContact].messages[index].message}}
                                     <span class="orario">{{myHour(message.date)}}</span>
                                     <span v-if="{'sent': true}" class="right-triangle"></span>
-                                    <span class="chevron" @click.stop="clicked = index">
+                                    <span class="chevron" @click.stop="dropdownAppear(index)">
                                         <i class="fa-solid fa-chevron-down"></i>
                                     </span>
                                     <div class="dropdown" v-show="index === clicked">
                                         <div class="info">
                                             Info Messaggio
                                         </div>
-                                        <div class="elimina">
+                                        <div class="elimina" @click="deleteMessage(index)">
                                             Cancella Messaggio
                                             <i class="fa-solid fa-trash"></i>
                                         </div>

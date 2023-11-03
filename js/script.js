@@ -8,6 +8,7 @@ createApp({
     return {
       contacts: contactsList,
       activeId: 1,
+      contactIndex: 0,
       newMessage: "",
       filterContact: "",
       clicked: null,
@@ -53,13 +54,51 @@ createApp({
         contact.name.toLowerCase().includes(this.filterContact.toLowerCase())
       );
     },
+    getLastMessage(id) {
+      const contact = this.contacts.find((contact) => contact.id === id);
+      const len = contact.messages.length;
+      if (len > 0) {
+        return contact.messages[len - 1].message;
+      } else {
+        return "Non hai messaggi con questo contatto";
+      }
+    },
+    getLastAccess(id) {
+      const contact = this.contacts.find((contact) => contact.id === id);
+      const len = contact.messages.length;
+      if (len > 0) {
+        return contact.messages[len - 1].date;
+      } else {
+        return "";
+      }
+    },
     dropdownRemove() {
+      this.clicked = null;
+    },
+    dropdownAppear(index) {
+      if (this.clicked === null) {
+        this.clicked = index;
+      } else {
+        this.clicked = null;
+      }
+    },
+    deleteMessage(index) {
+      this.contacts[this.activeContact].messages.splice(index, 1);
       this.clicked = null;
     },
   },
   computed: {
     activeContact() {
       return this.contacts.findIndex((contact) => contact.id === this.activeId);
+    },
+    activeTuma() {
+      return this.contacts[this.contactIndex];
+    },
+    lastDate() {
+      const dateLength = this.activeTuma.messages.length;
+      return dateLength > 0
+        ? this.activeTuma.messages[dateLength - 1].date
+        : "Unknown Date";
     },
   },
 }).mount("#app");
