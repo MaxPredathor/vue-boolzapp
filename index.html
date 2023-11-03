@@ -107,7 +107,7 @@
                                     {{contacts[activeContact].messages[index].message}}
                                     <span class="orario">{{myHour(message.date)}}</span>
                                     <span v-if="{'sent': true}" class="right-triangle"></span>
-                                    <span class="chevron" @click="clicked = !clicked">
+                                    <span class="chevron" @click="clicked = index">
                                         <i class="fa-solid fa-chevron-down"></i>
                                     </span>
                                     <div class="dropdown" v-show="clicked">

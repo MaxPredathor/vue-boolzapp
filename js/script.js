@@ -10,7 +10,7 @@ createApp({
       activeId: 1,
       newMessage: "",
       filterContact: "",
-      clicked: false,
+      clicked: null,
     };
   },
   methods: {
