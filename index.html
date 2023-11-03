@@ -106,10 +106,11 @@
                                 <div class="my-2 d-inline-block w-25 position-relative boss" :class="message.status">
                                     {{contacts[activeContact].messages[index].message}}
                                     <span class="orario">{{myHour(message.date)}}</span>
-                                    <span class="chevron" @click="dropdownOption">
+                                    <span v-if="{'sent': true}" class="right-triangle"></span>
+                                    <span class="chevron" @click="clicked = !clicked">
                                         <i class="fa-solid fa-chevron-down"></i>
                                     </span>
-                                    <div class="dropdown">
+                                    <div class="dropdown" v-show="clicked">
                                         <div class="info">
                                             Info Messaggio
                                         </div>
@@ -131,8 +132,6 @@
                             <button class="paperplane-button" @click="addMessage" v-else>
                                 <i class="fa-solid fa-paper-plane icons"></i>
                             </button>
-
-
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ createApp({
       activeId: 1,
       newMessage: "",
       filterContact: "",
+      clicked: false,
     };
   },
   methods: {
@@ -52,7 +53,6 @@ createApp({
         contact.name.toLowerCase().includes(this.filterContact.toLowerCase())
       );
     },
-    dropdownOption() {},
   },
   computed: {
     activeContact() {

@@ -198,10 +198,9 @@ body {
     width: 200px;
     line-height: 30px;
     position: absolute;
-    top: -45px;
+    top: -50px;
     right: 10px;
     background-color: var(--color-contact-hover);
-    display: none;
 }
 
 .info {
@@ -231,4 +230,20 @@ body {
 
 .boss:hover .fa-chevron-down {
     display: flex;
+}
+
+.right-triangle {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 20px auto;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent;
+    border-left: solid 20px var(--color-sent-message);
+    border-right-width: 0;
+    z-index: 1000;
+    position: absolute;
+    right: -10px;
+    bottom: 0;
 }
