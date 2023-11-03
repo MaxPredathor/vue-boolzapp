@@ -43,6 +43,9 @@ createApp({
       let element = document.getElementById("myDiv");
       element.scroll({ top: element.scrollHeight, behavior: "smooth" });
     },
+    myHour(date) {
+      return date.slice(11, 16);
+    },
   },
   computed: {
     activeContact() {
