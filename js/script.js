@@ -1,3 +1,5 @@
+const dt = luxon.DateTime;
+const date = dt.now();
 import { contactsList } from "./data.js";
 const { createApp } = Vue;
 
@@ -10,6 +12,9 @@ createApp({
     };
   },
   methods: {
+    isActive(id) {
+      return id === this.activeContact ? true : false;
+    },
     addMessage() {
       this.contacts[this.activeContact].messages.push({
         date: new Date().toLocaleString(),

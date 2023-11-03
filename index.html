@@ -61,7 +61,8 @@
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
                             <div class="contatto d-flex position-relative border-top"
-                                v-for="(contact, index) in contacts" @click="activeId = contact.id">
+                                v-for="(contact, index) in contacts" @click="activeId = contact.id"
+                                :class="{'active': isActive(contact.id - 1)}">
                                 <div class="rounded-circle overflow-hidden my-2 mx-2">
                                     <img class="contact-img" :src="contact.avatar" alt="">
                                 </div>
@@ -125,9 +126,10 @@
             </div>
         </div>
     </div>
-
-
     <!-- My JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.3/luxon.min.js"
+        integrity="sha512-gUQcFuEaDuAEqvxIQ9GDdMcCeFmG5MPnoc6ruJn+nyCNHrHM2oB97GOVLIOiixzTxPYmIfEQbOoQmx55UscLyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/script.js" type="module"></script>
 </body>

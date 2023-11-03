@@ -160,7 +160,7 @@ body {
 }
 
 .active {
-    background-color: var(--color-contact-hover);
+    background-color: #b6b7b777;
 }
 
 .my-input {
