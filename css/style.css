@@ -185,3 +185,50 @@ body {
     display: block;
     border: none;
 }
+
+.chevron {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--color-light-icons);
+    cursor: pointer;
+}
+
+.dropdown {
+    width: 200px;
+    line-height: 30px;
+    position: absolute;
+    top: -45px;
+    right: 10px;
+    background-color: var(--color-contact-hover);
+    display: none;
+}
+
+.info {
+    border: 1px solid var(--color-text-grey);
+    cursor: pointer;
+}
+
+.elimina {
+    color: red;
+    border-left: 1px solid var(--color-text-grey);
+    border-right: 1px solid var(--color-text-grey);
+    border-bottom: 1px solid var(--color-text-grey);
+    cursor: pointer;
+}
+
+.elimina:hover {
+    background-color: var(--color-light-icons);
+}
+
+.info:hover {
+    background-color: var(--color-light-icons);
+}
+
+.fa-chevron-down {
+    display: none;
+}
+
+.boss:hover .fa-chevron-down {
+    display: flex;
+}
