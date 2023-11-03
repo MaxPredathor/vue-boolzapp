@@ -9,6 +9,7 @@ createApp({
       contacts: contactsList,
       activeId: 1,
       newMessage: "",
+      filterContact: "",
     };
   },
   methods: {
@@ -45,6 +46,11 @@ createApp({
     },
     myHour(date) {
       return date.slice(11, 16);
+    },
+    filteredContact() {
+      return this.contacts.filter((contact) =>
+        contact.name.toLowerCase().includes(this.filterContact.toLowerCase())
+      );
     },
   },
   computed: {

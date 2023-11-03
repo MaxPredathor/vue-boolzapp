@@ -170,6 +170,16 @@ body {
     outline-style: none;
 }
 
+.search-input {
+    outline-color: none;
+    outline-style: none;
+    border-left: none;
+}
+
+.my-pre-input {
+    background-color: var(--color-white);
+}
+
 .paperplane-button {
     outline: none;
     display: block;

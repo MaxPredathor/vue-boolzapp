@@ -52,16 +52,16 @@
                         </div>
                         <div class="col-12 searchbar">
                             <div class="input-group mb-3 my-2">
-                                <span class="input-group-text" id="basic-addon1">
+                                <span class="input-group-text my-pre-input" id="basic-addon1">
                                     <i class="fa-solid fa-magnifying-glass lense"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                                    aria-describedby="basic-addon1" v-model="">
+                                <input type="text" class="form-control search-input" placeholder="Search"
+                                    aria-label="Search" aria-describedby="basic-addon1" v-model="filterContact">
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
                             <div class="contatto d-flex position-relative border-top"
-                                v-for="(contact, index) in contacts" @click="activeId = contact.id"
+                                v-for="contact in filteredContact()" @click="activeId = contact.id"
                                 :class="{'active': isActive(contact.id - 1)}">
                                 <div class="rounded-circle overflow-hidden my-2 mx-2">
                                     <img class="contact-img" :src="contact.avatar" alt="">
