@@ -13,6 +13,7 @@ createApp({
       myReply: myReply,
       filterContact: "",
       clicked: null,
+      dropdownClick: false,
       sent: false,
       staScrivendo: false,
       online: false,
@@ -102,6 +103,13 @@ createApp({
     },
     deleteMessage(index) {
       this.contacts[this.activeContact].messages.splice(index, 1);
+      this.clicked = null;
+    },
+    deleteAllMessage() {
+      this.contacts[this.activeContact].messages.splice(
+        this.contacts[this.activeContact].messages[0],
+        this.contacts[this.activeContact].messages.length
+      );
       this.clicked = null;
     },
   },

@@ -61,7 +61,8 @@
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 reset-padding">
                             <div class="contatto d-flex position-relative border-top"
-                                v-for="contact in filteredContact()" @click="activeId = contact.id, dropdownRemove() "
+                                v-for="contact in filteredContact()"
+                                @click.stop="activeId = contact.id, dropdownRemove(), dropdownClick = false "
                                 :class="{'active': isActive(contact.id - 1)}">
                                 <div class="rounded-circle overflow-hidden my-2 mx-2">
                                     <img class="contact-img" :src="contact.avatar" alt="">
@@ -78,7 +79,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-8">
-                    <div class="row h-100 flex-column flex-nowrap">
+                    <div class="row h-100 flex-column flex-nowrap" @click.stop="dropdownClick = false">
                         <div class="col-12 header d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="rounded-circle my-circle d-inline-block mt-5">
@@ -97,14 +98,28 @@
                                         Online</p>
                                 </div>
                             </div>
-                            <div class="icons">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip px-3"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="icons position-relative">
+                                <button class="btn icons">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                                <button class="btn icons">
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </button>
+                                <button class="btn icons" @click.stop="dropdownClick = !dropdownClick">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <div class="dropdown dropdown-icon" v-show="dropdownClick === true">
+                                    <div class="info">
+                                        Elimina Contatto
+                                    </div>
+                                    <div class="info" @click="deleteAllMessage()">
+                                        Cancella Messaggi
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div id="myDiv" class="col-12 flex-grow-1 main-text overflow-y-auto h0" @update="updateScroll"
-                            @click="dropdownRemove()">
+                            @click="dropdownRemove(), dropdownClick = false">
                             <div class="my-5" v-for="(message, index) in contacts[activeContact].messages">
                                 <div class="my-2 d-inline-block w-25 position-relative boss" :class="message.status">
                                     {{contacts[activeContact].messages[index].message}}
