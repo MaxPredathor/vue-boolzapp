@@ -12,6 +12,9 @@ createApp({
       newMessage: "",
       filterContact: "",
       clicked: null,
+      sent: false,
+      staScrivendo: false,
+      online: false,
     };
   },
   methods: {
@@ -26,13 +29,26 @@ createApp({
           message: this.newMessage,
           status: "sent",
         });
+        this.sent = true;
         this.newMessage = "";
         setTimeout(() => {
           this.updateScroll();
         }, 10);
         setTimeout(() => {
           this.addAnswer();
-        }, 10);
+        }, 2000);
+        setTimeout(() => {
+          this.staScrivendo = true;
+        }, 1000);
+        setTimeout(() => {
+          this.staScrivendo = false;
+        }, 2500);
+        setTimeout(() => {
+          this.online = true;
+        }, 2500);
+        setTimeout(() => {
+          this.online = false;
+        }, 3500);
       }
     },
     addAnswer() {
@@ -41,6 +57,7 @@ createApp({
         message: "Ok",
         status: "received",
       });
+      this.sent = false;
       setTimeout(() => {
         this.updateScroll();
       }, 1000);

@@ -86,10 +86,14 @@
                                 </div>
                                 <div class="d-inline-block mx-2 py-1">
                                     <h5>{{contacts[activeContact].name}}</h5>
-                                    <p class="last-message pb-3">
+                                    <p class="last-message pb-3" v-show="staScrivendo === false && online === false">
                                         Ultimo accesso:
                                         {{lastDate}}
                                     </p>
+                                    <p class="pb-3" v-show="staScrivendo === true"
+                                        style="color:#54a714; font-size: 0.8em;">Sta
+                                        scrivendo...</p>
+                                    <p class="pb-3" style="font-size: 0.8em" v-show="online === true">Online</p>
                                 </div>
                             </div>
                             <div class="icons">
@@ -104,7 +108,8 @@
                                 <div class="my-2 d-inline-block w-25 position-relative boss" :class="message.status">
                                     {{contacts[activeContact].messages[index].message}}
                                     <span class="orario">{{myHour(message.date)}}</span>
-                                    <span v-if="{sent: true}" class="right-triangle"></span>
+                                    <span v-if="sent === true" class="right-triangle"></span>
+                                    <span v-else>ciao</span>
                                     <span class="chevron" @click.stop="dropdownAppear(index)">
                                         <i class="fa-solid fa-chevron-down"></i>
                                     </span>
