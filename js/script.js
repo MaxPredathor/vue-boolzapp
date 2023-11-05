@@ -33,7 +33,7 @@ createApp({
         this.newMessage = "";
         setTimeout(() => {
           this.updateScroll();
-        }, 10);
+        }, 2010);
         setTimeout(() => {
           this.addAnswer();
         }, 2000);
@@ -42,13 +42,11 @@ createApp({
         }, 1000);
         setTimeout(() => {
           this.staScrivendo = false;
-        }, 2500);
-        setTimeout(() => {
           this.online = true;
         }, 2500);
         setTimeout(() => {
           this.online = false;
-        }, 3500);
+        }, 4000);
       }
     },
     addAnswer() {
