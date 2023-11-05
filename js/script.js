@@ -19,18 +19,21 @@ createApp({
       return id === this.activeContact ? true : false;
     },
     addMessage() {
-      this.contacts[this.activeContact].messages.push({
-        date: new Date().toLocaleString(),
-        message: this.newMessage,
-        status: "sent",
-      });
-      this.newMessage = "";
-      setTimeout(() => {
-        this.updateScroll();
-      }, 10);
-      setTimeout(() => {
-        this.addAnswer();
-      }, 10);
+      if (this.newMessage.trim() === "") {
+      } else {
+        this.contacts[this.activeContact].messages.push({
+          date: new Date().toLocaleString(),
+          message: this.newMessage,
+          status: "sent",
+        });
+        this.newMessage = "";
+        setTimeout(() => {
+          this.updateScroll();
+        }, 10);
+        setTimeout(() => {
+          this.addAnswer();
+        }, 10);
+      }
     },
     addAnswer() {
       this.contacts[this.activeContact].messages.push({
