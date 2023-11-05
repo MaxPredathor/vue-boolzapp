@@ -1,6 +1,6 @@
-const dt = luxon.DateTime;
-const date = dt.now();
 import { contactsList } from "./data.js";
+import { myReply } from "./data.js";
+import { getRndInteger } from "./data.js";
 const { createApp } = Vue;
 
 createApp({
@@ -10,6 +10,7 @@ createApp({
       activeId: 1,
       contactIndex: 0,
       newMessage: "",
+      myReply: myReply,
       filterContact: "",
       clicked: null,
       sent: false,
@@ -52,10 +53,9 @@ createApp({
     addAnswer() {
       this.contacts[this.activeContact].messages.push({
         date: new Date().toLocaleString(),
-        message: "Ok",
+        message: this.myReply[getRndInteger(0, this.myReply.length - 1)],
         status: "received",
       });
-      this.sent = false;
       setTimeout(() => {
         this.updateScroll();
       }, 1000);
