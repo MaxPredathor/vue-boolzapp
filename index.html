@@ -127,8 +127,8 @@
                                 <div class="my-2 d-inline-block w-25 position-relative boss" :class="message.status">
                                     {{contacts[activeContact].messages[index].message}}
                                     <span class="orario">{{myHour(message.date)}}</span>
-                                    <span v-if="" class="right-triangle"></span>
-                                    <span v-else>ciao</span>
+                                    <span v-if="message.status === 'sent'" class="right-triangle"></span>
+                                    <span v-else class="left-triangle"></span>
                                     <span class="chevron" @click.stop="dropdownAppear(index)">
                                         <i class="fa-solid fa-chevron-down"></i>
                                     </span>
