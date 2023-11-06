@@ -131,6 +131,14 @@ createApp({
         : "Unknown Date";
     },
   },
+  mounted() {
+    const loading = this.$refs.loading;
+    const content = this.$refs.content;
+    setTimeout(() => {
+      loading.classList.add("d-none");
+      content.classList.remove("d-none");
+    }, 3000);
+  },
 }).mount("#app");
 
 // function bottom() {
