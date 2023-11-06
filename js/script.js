@@ -17,6 +17,7 @@ createApp({
       sent: false,
       staScrivendo: false,
       online: false,
+      showChat: false,
     };
   },
   methods: {
@@ -110,8 +111,11 @@ createApp({
         this.contacts[this.activeContact].messages[0],
         this.contacts[this.activeContact].messages.length
       );
-      this.clicked = null;
     },
+    // deleteContact() {
+    //   this.contacts.splice(this.activeContact, 1);
+    //   this.activeContact = 0;
+    // },
   },
   computed: {
     activeContact() {

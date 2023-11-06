@@ -174,4 +174,14 @@ export function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export const myReply = [];
+export const myReply = [
+  "Che la forza sia con te",
+  "la festa è finita",
+  "No, Io sono tuo padre",
+  "Lo so, in qualche modo l' sempre saputo",
+  "Non Avere paura di chi sei",
+  "CHEWIE, siamoa a casa!",
+  "Creature luminose noi siamo",
+  "Fallo o non farlo, ma non provarci",
+  "La capacità di parlare, intelligente non ti rende",
+];
